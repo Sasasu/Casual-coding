@@ -6,7 +6,7 @@ int main()
 	int i;
 	scanf("%f%f",&n,&money);
 	for(i=0;i++;i<n)
-		money=money+money*rate;
+	money=money+money*rate;
 	printf("%f\n",money);
 	return 0;
 }
