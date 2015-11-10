@@ -1,16 +1,16 @@
 #include<stdio.h>
 int main()
 {
-	char a[100][100] = {0};
-	int i;
-	for (i=1;;i++)
-	{
-		scanf("%s",&a[i]);
-		if(getchar()=='\n')
-			break;
-	}
-	for (i;i>1;i--)
-		printf("%s ",a[i]);
-	printf("%s",a[1]);
-	return 0;
+    int i,n=0;
+    char c[100][10000];
+    for( ;scanf("%s",c[n])==1;n++)
+       ;
+
+    for(i=n-1;i>=0;i--)
+       {
+           printf("%s",c[i]);
+           if(i!=0)
+           printf(" ");
+       }
+         return 0;
 }
