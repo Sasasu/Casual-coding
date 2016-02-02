@@ -6,12 +6,12 @@
  ************************************************************************/
 
 #include<stdio.h>
-void change(char *a, char *b)
-{
-    char t = *a;
-    *a = *b;
-    *b = t;
-}
+#define change(a, b)                                                           \
+  do {                                                                         \
+    move = a;                                                                  \
+    a = b;                                                                     \
+    b = move;                                                                  \
+  } while (1)
 int main()
 {
     char grid[26];
@@ -26,10 +26,10 @@ int main()
         grid[25] = '\0';
         while((c = getchar()) != 'O'){
             switch(c){
-                case 'A': if (flag-5 >= 0) change(&grid[i],&grid[i-5]); else error = 1; break;
-                case 'B': if (flag+5 < 26) change(&grid[i],&grid[i+5]); else error = 1; break;
-                case 'L': if (flag%5 > 1) change(&grid[i],&grid[i-1]); else error = 1; break;
-                case 'R': if (flag%5 < 5) change(&grid[i],&grid[i+1]); else error = 1; break;
+                case 'A': if (flag-5 >= 0) change(grid[i],grid[i-5]); else error = 1; break;
+                case 'B': if (flag+5 < 26) change(grid[i],grid[i+5]); else error = 1; break;
+                case 'L': if (flag%5 > 1) change(grid[i],grid[i-1]); else error = 1; break;
+                case 'R': if (flag%5 < 5) change(grid[i],grid[i+1]); else error = 1; break;
                 default : error = 1;
             }
         }
