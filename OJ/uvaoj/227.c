@@ -11,7 +11,7 @@
     move = a;                                                                  \
     a = b;                                                                     \
     b = move;                                                                  \
-  } while (1)
+  } while (0)
 int main()
 {
     char grid[26];
